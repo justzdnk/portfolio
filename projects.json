@@ -22,5 +22,11 @@
   "image": "images/patterns.jpg",
   "link": "project-patterns1.html",
   "size": "small"
+  },
+  {
+  "title": "SNEAKERS",
+  "image": "images/sneakers.jpg",
+  "link": "project-sneakers.html",
+  "size": "small"
 }
 ]
