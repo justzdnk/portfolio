@@ -6,6 +6,12 @@
     "size": "small"
   },
   {
+    "title": "COOL TOYS",
+    "image": "images/cooltoys.png",
+    "link": "project?id=cooltoys",
+    "size": "small"
+  },
+  {
     "title": "TWINGO",
     "image": "images/twingo.png",
     "link": "project?id=twingo",
