@@ -1,0 +1,30 @@
+{
+  "title": "patterns1",
+  "description": "A series of automotive design explorations focusing on the iconic Renault Twingo, reimagined with modern aesthetics and futuristic elements. A bit funky. A bit quirky",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "text",
+      "content": "The design process explored how classic automotive forms could be reinterpreted through contemporary digital workflows."
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    },
+    {
+      "type": "image",
+      "src": "04.jpg"
+    },
+    {
+      "type": "image",
+      "src": "05.jpg"
+    }
+  ]
+}
