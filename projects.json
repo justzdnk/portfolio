@@ -1,5 +1,11 @@
 [
   {
+  "title": "HYUNDAI CONCEPT3",
+  "image": "images/concept3.jpg",
+  "link": "project-page.html",
+  "size": "small"
+},
+  {
     "title": "TWINGO",
     "image": "images/twingo.png",
     "link": "project-twingo.html",
