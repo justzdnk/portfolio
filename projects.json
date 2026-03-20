@@ -17,4 +17,10 @@
     "link": "project-dailies.html",
     "size": "small"
   }
+  {
+  "title": "patterns",
+  "image": "images/patterns.jpg",
+  "link": "project-patterns1.html",
+  "size": "large"
+}
 ]
