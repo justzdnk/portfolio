@@ -2,7 +2,7 @@
   {
   "title": "HYUNDAI CONCEPT3",
   "image": "images/concept3.jpg",
-  "link": "project-page.html",
+  "link": ""project?id=Hyundaiconcept3"",
   "size": "small"
 },
   {
@@ -14,25 +14,25 @@
   {
     "title": "ABSTRACT",
     "image": "images/abstract.png",
-    "link": "project-abstract.html",
+    "link": "project?id=abstract",
     "size": "small"
   },
   {
     "title": "DAILIES",
     "image": "images/dailies.png",
-    "link": "project-dailies.html",
+    "link": "project?id=dailies",
     "size": "small"
   },
   {
   "title": "PATTERNS1",
   "image": "images/patterns.jpg",
-  "link": "project-patterns1.html",
+  "link": "project?id=patterns1",
   "size": "small"
   },
   {
   "title": "SNEAKERS",
   "image": "images/sneakers.jpg",
-  "link": "project-sneakers.html",
+  "link": ""project?id=sneakers"",
   "size": "small"
 }
 ]
