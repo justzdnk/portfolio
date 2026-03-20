@@ -1,91 +1,168 @@
 # JUSTZDNK Portfolio
 
-Simple JSON-driven portfolio. Edit one file to manage all projects.
+JSON-driven portfolio. Edit JSON files to manage everything.
 
-## Quick Start
+## Adding a new project to homepage
 
-### 1. Add a new project
+### 1. Edit `projects.json`
 
-Edit `projects.json`:
+Add your project:
+
+```json
+{
+  "title": "PROJECT NAME",
+  "image": "images/cover.jpg",
+  "link": "project.html?id=project-name",
+  "size": "small"
+}
+```
+
+- **size**: `"large"` (full width) or `"small"` (half width)
+- **id**: Must match your project folder name
+
+### 2. Add cover image
+
+Drop `cover.jpg` in `/images/` folder.
+
+---
+
+## Adding project content (detail pages)
+
+### 1. Create project folder
+
+```
+projects/
+└── your-project-name/
+    ├── project.json
+    ├── 01.jpg
+    ├── 02.jpg
+    └── 03.jpg
+```
+
+### 2. Create `project.json`
+
+Inside `/projects/your-project-name/project.json`:
 
 ```json
 {
   "title": "YOUR PROJECT NAME",
-  "image": "images/your-image.jpg",
-  "link": "project-name.html",
+  "description": "Brief description of the project.",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "text",
+      "content": "Optional text between images explaining your process."
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    }
+  ]
+}
+```
+
+### 3. Add images
+
+Drop all project images in the same folder as `project.json`.
+
+---
+
+## File structure
+
+```
+portfolio/
+├── index.html
+├── project.html
+├── projects.json
+├── images/
+│   ├── twingo.png      ← Homepage covers
+│   ├── abstract.png
+│   └── dailies.png
+└── projects/
+    ├── twingo/
+    │   ├── project.json  ← Project config
+    │   ├── 01.jpg        ← Project images
+    │   ├── 02.jpg
+    │   └── 03.jpg
+    ├── abstract/
+    │   ├── project.json
+    │   └── 01.jpg
+    └── dailies/
+        ├── project.json
+        └── 01.jpg
+```
+
+---
+
+## Example: Full project setup
+
+**1. Add to homepage (`projects.json`):**
+
+```json
+{
+  "title": "NEW PROJECT",
+  "image": "images/new-cover.jpg",
+  "link": "project.html?id=new-project",
   "size": "large"
 }
 ```
 
-- **size**: `"large"` (full width) or `"small"` (half width, 2 per row)
-- **title**: Shows on hover at bottom of image
-- **link**: Where to go when clicked
-
-### 2. Add the image
-
-Drop your image in `/images/` folder. Name it whatever you want, just match it in the JSON.
-
-### 3. Push to GitHub
-
-```bash
-git add .
-git commit -m "Added new project"
-git push
-```
-
-Vercel auto-deploys. Done.
-
-## File Structure
+**2. Create folder:**
 
 ```
-portfolio/
-├── index.html          # Main page (don't touch)
-├── projects.json       # Edit this to add/remove projects
-├── images/             # Drop images here
-│   ├── twingo.png
-│   ├── abstract.png
-│   └── dailies.png
-└── README.md
+projects/new-project/
 ```
 
-## Deployment
+**3. Add `project.json`:**
 
-### First time setup:
-1. Push to GitHub
-2. Connect Vercel to your GitHub repo
-3. Deploy (automatic)
-
-### Updates:
-Just push to GitHub. Vercel auto-deploys.
-
-## Layout Rules
-
-Projects auto-arrange based on `size`:
-- `"large"` projects take full width
-- `"small"` projects pair up (2 per row)
-- They stack in the order you list them in JSON
-
-Mix large and small freely. The layout adapts.
-
-## Examples
-
-**All small (2x2 grid):**
 ```json
-[
-  {"title": "A", "image": "a.jpg", "link": "#", "size": "small"},
-  {"title": "B", "image": "b.jpg", "link": "#", "size": "small"},
-  {"title": "C", "image": "c.jpg", "link": "#", "size": "small"},
-  {"title": "D", "image": "d.jpg", "link": "#", "size": "small"}
-]
+{
+  "title": "NEW PROJECT",
+  "description": "This is my latest work exploring...",
+  "content": [
+    {"type": "image", "src": "hero.jpg"},
+    {"type": "text", "content": "The concept started with..."},
+    {"type": "image", "src": "detail-1.jpg"},
+    {"type": "image", "src": "detail-2.jpg"}
+  ]
+}
 ```
 
-**Mixed:**
+**4. Drop images:**
+- `new-cover.jpg` in `/images/`
+- `hero.jpg`, `detail-1.jpg`, `detail-2.jpg` in `/projects/new-project/`
+
+**5. Push to GitHub**
+
+Done.
+
+---
+
+## Content types
+
+**Images:**
 ```json
-[
-  {"title": "Hero", "image": "hero.jpg", "link": "#", "size": "large"},
-  {"title": "A", "image": "a.jpg", "link": "#", "size": "small"},
-  {"title": "B", "image": "b.jpg", "link": "#", "size": "small"}
-]
+{"type": "image", "src": "filename.jpg"}
 ```
+
+**Text blocks:**
+```json
+{"type": "text", "content": "Your text here. Can be multiple paragraphs."}
+```
+
+Mix them in any order.
+
+---
+
+## Deploy
+
+Push to GitHub → Vercel auto-deploys in 30 seconds.
 
 That's it.
