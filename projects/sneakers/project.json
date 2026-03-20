@@ -1,0 +1,26 @@
+{
+  "title": "sneakers",
+  "description": "Hacking the process of creation, entering the space and speaking when everyone expects you to be quiet",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    },
+    {
+      "type": "image",
+      "src": "04.jpg"
+    },
+    {
+      "type": "image",
+      "src": "05.jpg"
+    }
+  ]
+}
