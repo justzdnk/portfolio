@@ -3,7 +3,7 @@
     "title": "TWINGO",
     "image": "images/twingo.png",
     "link": "project-twingo.html",
-    "size": "large"
+    "size": "small"
   },
   {
     "title": "ABSTRACT",
@@ -21,6 +21,6 @@
   "title": "PATTERNS1",
   "image": "images/patterns.jpg",
   "link": "project-patterns1.html",
-  "size": "large"
+  "size": "small"
 }
 ]
