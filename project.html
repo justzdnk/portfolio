@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - JUSTZDNK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #d4d4d4;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .logo-text {
+            font-size: 10px;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #666;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #333;
+        }
+
+        /* Project header */
+        .project-header {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .project-header h1 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .project-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Project images */
+        .project-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-image {
+            margin-bottom: 60px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-text {
+            max-width: 700px;
+            margin: 80px auto;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+            margin-top: 80px;
+            border-top: 1px solid #999;
+        }
+
+        .copyright {
+            font-size: 10px;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: #333;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+        }
+
+        .scroll-top::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 12px solid white;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            header {
+                margin-bottom: 50px;
+            }
+
+            .project-header {
+                margin-bottom: 50px;
+            }
+
+            .project-header h1 {
+                font-size: 24px;
+            }
+
+            .project-image {
+                margin-bottom: 40px;
+            }
+
+            .project-text {
+                margin: 50px auto;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-text">(JUSTZDNK)</div>
+            <a href="index.html" class="back-link">← BACK TO WORK</a>
+        </header>
+
+        <div class="project-header" id="projectHeader"></div>
+        <div class="project-content" id="projectContent"></div>
+
+        <footer>
+            <div class="copyright">(JUSTZDNK) copyright2026</div>
+        </footer>
+    </div>
+
+    <button class="scroll-top" id="scrollTop"></button>
+
+    <script>
+        // Get project ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        async function loadProject() {
+            try {
+                const response = await fetch(`projects/${projectId}/project.json`);
+                const project = await response.json();
+                renderProject(project);
+            } catch (error) {
+                console.error('Error loading project:', error);
+                document.getElementById('projectHeader').innerHTML = '<h1>Project not found</h1>';
+            }
+        }
+
+        function renderProject(project) {
+            // Render header
+            const header = document.getElementById('projectHeader');
+            header.innerHTML = `
+                <h1>${project.title}</h1>
+                <p class="project-description">${project.description || ''}</p>
+            `;
+
+            // Update page title
+            document.title = `${project.title} - JUSTZDNK`;
+
+            // Render content
+            const content = document.getElementById('projectContent');
+            let html = '';
+
+            project.content.forEach(item => {
+                if (item.type === 'image') {
+                    html += `
+                        <div class="project-image">
+                            <img src="projects/${projectId}/${item.src}" alt="${project.title}">
+                        </div>
+                    `;
+                } else if (item.type === 'video') {
+                    html += `
+                        <div class="project-image">
+                            <video controls style="width: 100%; height: auto;">
+                                <source src="projects/${projectId}/${item.src}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    `;
+                } else if (item.type === 'text') {
+                    html += `
+                        <div class="project-text">
+                            ${item.content}
+                        </div>
+                    `;
+                }
+            });
+
+            content.innerHTML = html;
+        }
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Load project on page load
+        if (projectId) {
+            loadProject();
+        } else {
+            document.getElementById('projectHeader').innerHTML = '<h1>No project specified</h1>';
+        }
+    </script>
+</body>
+</html>
