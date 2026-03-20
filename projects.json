@@ -1,10 +1,10 @@
 [
   {
-  "title": "HYUNDAI CONCEPT3",
-  "image": "images/concept3.jpg",
-  "link": "project?id=concept3",
-  "size": "small"
-},
+    "title": "HYUNDAI CONCEPT3",
+    "image": "images/concept3.jpg",
+    "link": "project?id=concept3",
+    "size": "small"
+  },
   {
     "title": "TWINGO",
     "image": "images/twingo.png",
@@ -24,15 +24,15 @@
     "size": "small"
   },
   {
-  "title": "PATTERNS1",
-  "image": "images/patterns.jpg",
-  "link": "project?id=patterns1",
-  "size": "small"
+    "title": "PATTERNS1",
+    "image": "images/patterns.jpg",
+    "link": "project?id=patterns1",
+    "size": "small"
   },
   {
-  "title": "SNEAKERS",
-  "image": "images/sneakers.jpg",
-  "link": "project?id=sneakers",
-  "size": "small"
-}
+    "title": "SNEAKERS",
+    "image": "images/sneakers.jpg",
+    "link": "project?id=sneakers",
+    "size": "small"
+  }
 ]
