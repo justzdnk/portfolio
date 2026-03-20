@@ -17,6 +17,14 @@
     {
       "type": "image",
       "src": "03.jpg"
+    },
+    {
+      "type": "image",
+      "src": "04.jpg"
+    },
+    {
+      "type": "image",
+      "src": "05.jpg"
     }
   ]
 }
