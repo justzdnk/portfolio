@@ -1,4 +1,11 @@
 [
+  {,
+  {
+    "title": "GT",
+    "image": "images/private-gt.jpg",
+    "link": "project?id=gt",
+    "size": "large"
+  },
   {
     "title": "SKETCHES",
     "image": "images/private-sketches.jpg",
@@ -15,12 +22,6 @@
     "title": "MATRA",
     "image": "images/private-matra.jpg",
     "link": "project?id=matra",
-    "size": "small"
-  },
-  {
-    "title": "GT",
-    "image": "images/private-gt.jpg",
-    "link": "project?id=gt",
     "size": "small"
   }
 ]
