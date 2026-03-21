@@ -1,0 +1,26 @@
+{
+  "title": "SKETCHES",
+  "description": "Collection of design sketches and exploratory drawings.",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    },
+    {
+      "type": "image",
+      "src": "04.jpg"
+    },
+    {
+      "type": "image",
+      "src": "05.jpg"
+    }
+  ]
+}
