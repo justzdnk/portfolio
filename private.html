@@ -299,11 +299,10 @@
 
         <footer>
             <div class="copyright">© Copyright: Zdenek Borysek 2026 - All Rights Reserved</div>
-            <div class="footer-logo"></div>
+            
         </footer>
     </div>
 
-    <button class="scroll-top" id="scrollTop"></button>
 
     <script>
         // Load private projects
@@ -353,11 +352,6 @@
         }
 
         // Scroll to top
-        const scrollTopBtn = document.getElementById('scrollTop');
-        
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
-        });
 
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
