@@ -1,1 +1,27 @@
 
+{
+  "title": "abstract",
+  "description": "This project explores abstract landscapes of softness and vivid color, forming sculptural shapes that move like silk in the wind.",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    },
+    {
+      "type": "image",
+      "src": "04.jpg"
+    },
+    {
+      "type": "image",
+      "src": "05.jpg"
+    }
+  ]
+}
