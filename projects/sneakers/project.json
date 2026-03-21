@@ -24,6 +24,10 @@
     },
     {
       "type": "image",
+      "src": "07.jpg"
+    },
+    {
+      "type": "image",
       "src": "06.jpg"
     }
   ]
