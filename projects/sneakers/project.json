@@ -21,6 +21,10 @@
     {
       "type": "image",
       "src": "05.jpg"
+    },
+    {
+      "type": "image",
+      "src": "06.jpg"
     }
   ]
 }
