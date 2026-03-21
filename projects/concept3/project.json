@@ -34,6 +34,10 @@
     {
       "type": "image",
       "src": "08.jpg"
+    },
+    {
+      "type": "image",
+      "src": "09.jpg"
     }
   ]
 }
