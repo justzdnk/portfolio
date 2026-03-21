@@ -18,12 +18,6 @@
     "size": "small"
   },
   {
-    "title": "ABSTRACT",
-    "image": "images/abstract.png",
-    "link": "project?id=abstrasct",
-    "size": "small"
-  },
-  {
     "title": "DAILIES",
     "image": "images/dailies.png",
     "link": "project?id=dailies",
@@ -45,6 +39,12 @@
     "title": "ILLUSTRATION",
     "image": "images/illustration.jpg",
     "link": "project?id=illustration",
+    "size": "small"
+  },
+  {
+    "title": "ABSTRACT",
+    "image": "images/abstract.png",
+    "link": "project?id=abstrasct",
     "size": "small"
   }
 ]
