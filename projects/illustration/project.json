@@ -1,1 +1,18 @@
-
+{
+  "title": "ILLUSTRATION",
+  "description": "Sample of illustrations where I have developed the look and feel for the launch of SantaFe in GB",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    }
+  ]
+}
