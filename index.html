@@ -223,6 +223,15 @@
             display: block;
         }
 
+        /* About section - hidden by default */
+        #about {
+            display: none;
+        }
+
+        #about.active {
+            display: block;
+        }
+
         #contact h2 {
             font-size: 24px;
             font-weight: 300;
@@ -335,6 +344,17 @@
 
         <div class="projects" id="projectsGrid"></div>
 
+        <!-- About section -->
+        <div id="about" style="max-width: 800px; margin: 80px auto; padding: 40px; background: #e8e8e8;">
+            <h2 style="font-size: 24px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; text-align: center;">ABOUT</h2>
+            <p style="font-size: 14px; line-height: 1.8; color: #333; text-align: left;">
+                Automotive interior designer with 18+ years of experience across Volkswagen Group and Hyundai Motor Europe. Currently Creative Specialist at Hyundai (2022–present), previously Senior Interior Designer (2017–2024). 7 years at Volkswagen AG as Interior Designer at Nutzfahrzeuge and general interior design roles (2010–2016). Early career includes internships at Skoda Auto (exterior) and Volkswagen AG (interior), plus Master's degree from Volkswagen AG (2009).
+            </p>
+            <p style="font-size: 14px; line-height: 1.8; color: #333; text-align: left; margin-top: 20px;">
+                Running Creative Mind / Popsicle Guy since 2020—self-employed work in branding, identity, and creative ideation. Skilled in Adobe Creative Suite, strategic thinking, and creative ideation.
+            </p>
+        </div>
+
         <div id="contact">
             <h2>CONTACT</h2>
             <form id="contactForm">
@@ -413,6 +433,7 @@
         function goHome(e) {
             e.preventDefault();
             document.getElementById('contact').classList.remove('active');
+            document.getElementById('about').classList.remove('active');
             document.getElementById('projectsGrid').style.display = 'grid';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -424,16 +445,39 @@
         document.querySelector('a[href="#contact"]').addEventListener('click', (e) => {
             e.preventDefault();
             const contactSection = document.getElementById('contact');
+            const aboutSection = document.getElementById('about');
             const projectsGrid = document.getElementById('projectsGrid');
             
             contactSection.classList.toggle('active');
+            aboutSection.classList.remove('active');
             
-            // Scroll to contact form if showing
             if (contactSection.classList.contains('active')) {
                 contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 projectsGrid.style.display = 'none';
+                aboutSection.style.display = 'none';
             } else {
                 projectsGrid.style.display = 'grid';
+                aboutSection.style.display = 'block';
+            }
+        });
+
+        // Show/hide about section
+        document.querySelector('a[href="#about"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            const aboutSection = document.getElementById('about');
+            const contactSection = document.getElementById('contact');
+            const projectsGrid = document.getElementById('projectsGrid');
+            
+            aboutSection.classList.toggle('active');
+            contactSection.classList.remove('active');
+            
+            if (aboutSection.classList.contains('active')) {
+                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                projectsGrid.style.display = 'none';
+                contactSection.style.display = 'none';
+            } else {
+                projectsGrid.style.display = 'grid';
+                contactSection.style.display = 'none';
             }
         });
 
