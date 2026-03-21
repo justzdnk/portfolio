@@ -230,8 +230,18 @@
         </footer>
     </div>
 
+    <button class="scroll-top" id="scrollTop"></button>
 
     <script>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         // Get project ID from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('id');
@@ -305,10 +315,6 @@
             loadProject();
         } else {
             document.getElementById('projectHeader').innerHTML = '<h1>No project specified</h1>';
-        }
-    </script>
-</body>
-</html>
         }
     </script>
 </body>
