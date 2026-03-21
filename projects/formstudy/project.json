@@ -1,0 +1,14 @@
+{
+  "title": "FORM STUDY",
+  "description": "Exploration of form, volume, and sculptural elements in automotive design.",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    }
+  ]
+}
