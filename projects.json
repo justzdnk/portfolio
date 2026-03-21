@@ -40,5 +40,11 @@
     "image": "images/sneakers.jpg",
     "link": "project?id=sneakers",
     "size": "small"
+  },
+  {
+    "title": "ILLUSTRATION",
+    "image": "images/illustration.jpg",
+    "link": "project?id=illustration",
+    "size": "small"
   }
 ]
