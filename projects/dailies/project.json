@@ -1,0 +1,18 @@
+{
+  "title": "DAILIES",
+  "description": "In 2020, during the first lockdown, I committed to using the time I'd normally spend commuting to learn 3D. What started as a simple exercise turned into a deep, nearly two-year exploration. At the beginning, I would spend around 20 minutes modeling something, hit render, and post it—no matter the result. Sometimes it was rushed, sometimes a bit stressful, but it became a study in how to fill a given format with the best of my current knowledge, always learning something new. Often it went beyond 20 minutes, but the outcome was always a 'popsicle' — an abstract, sometimes playful or slightly absurd, yet always a kind of floating sculpture. At some point, it stopped serving its purpose as I shifted focus to more complex processes like animation, and the project became obsolete. Still, the takeaway is simple: if you want to learn something, show up every day, put in the time, and make it count. Over time, it builds into skill, experience, and something genuinely valuable.",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    }
+  ]
+}
