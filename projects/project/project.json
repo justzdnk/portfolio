@@ -1,0 +1,27 @@
+{
+  "title": "pickup",
+  "description": "Design exploration related to offroad vehicle. The work shows the balance between boxy, sleek and rugged look, the architecture follows the functionality related to driving in the offroad.",
+  "content": [
+    {
+      "type": "image",
+      "src": "01.jpg"
+    },
+    {
+      "type": "image",
+      "src": "02.jpg"
+    },
+    {
+      "type": "image",
+      "src": "03.jpg"
+    },
+    {
+      "type": "image",
+      "src": "04.jpg"
+    },
+    {
+      "type": "image",
+      "src": "05.jpg"
+    },
+    }
+  ]
+}
