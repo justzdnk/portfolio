@@ -12,6 +12,12 @@
     "size": "small"
   },
   {
+    "title": "PICKUP",
+    "image": "images/private-pickup.jpg",
+    "link": "project?id=pickup",
+    "size": "small"
+  },
+  {
     "title": "FORM STUDY",
     "image": "images/private-formstudy.jpg",
     "link": "project?id=formstudy",
