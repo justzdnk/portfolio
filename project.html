@@ -75,6 +75,58 @@
             color: #333;
         }
 
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .toggle-label {
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        .dark-toggle {
+            position: relative;
+            width: 28px;
+            height: 15px;
+            background: #bbb;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .dark-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 11px;
+            height: 11px;
+            background: #fff;
+            border-radius: 50%;
+            transition: transform 0.25s;
+        }
+
+        body.dark { background: #1c1c1c; color: #ccc; }
+        body.dark .logo-text, body.dark .copyright { color: #555; }
+        body.dark .back-link { color: #777; }
+        body.dark .back-link:hover { color: #ccc; }
+        body.dark .social-links a { color: #777; }
+        body.dark .social-links a:hover { color: #ccc; }
+        body.dark .toggle-label { color: #555; }
+        body.dark .dark-toggle { background: #555; }
+        body.dark .dark-toggle::after { transform: translateX(13px); }
+        body.dark .scroll-top { background: #444; }
+        body.dark .project-header h1 { color: #ccc; }
+        body.dark .project-description, body.dark .project-text { color: #888; }
+        body.dark footer { border-top-color: #444; }
+
         /* Project header */
         .project-header {
             max-width: 800px;
@@ -212,12 +264,18 @@
     <div class="container">
         <header>
             <a href="index.html" class="logo-text" style="cursor: pointer; text-decoration: none;">(JUSTZDNK)</a>
-            <div style="display: flex; gap: 50px; align-items: center;">
-                <a href="index.html" class="back-link">← HOME</a>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/squarish_soul/" target="_blank">IG1</a>
-                    <a href="https://www.instagram.com/popsicle__guy/" target="_blank">IG2</a>
-                    <a href="https://www.youtube.com/@make_it_nice4" target="_blank">YT</a>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+                <div style="display: flex; gap: 50px; align-items: center;">
+                    <a href="index.html" class="back-link">← HOME</a>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/squarish_soul/" target="_blank">IG1</a>
+                        <a href="https://www.instagram.com/popsicle__guy/" target="_blank">IG2</a>
+                        <a href="https://www.youtube.com/@make_it_nice4" target="_blank">YT</a>
+                    </div>
+                </div>
+                <div class="toggle-wrap">
+                    <span class="toggle-label">DARK</span>
+                    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
                 </div>
             </div>
         </header>
@@ -233,6 +291,16 @@
     <button class="scroll-top" id="scrollTop"></button>
 
     <script>
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark');
+        }
+        darkToggle.addEventListener('click', () => {
+            localStorage.setItem('darkMode', document.body.classList.toggle('dark'));
+        });
+
         // Scroll to top button
         const scrollTopBtn = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
