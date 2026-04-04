@@ -45,8 +45,9 @@
 
         .header-right {
             display: flex;
-            gap: 50px;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
         }
 
         .main-nav {
@@ -84,6 +85,71 @@
         .social-links a:hover {
             color: #333;
         }
+
+        /* Dark mode toggle switch */
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .toggle-label {
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        .dark-toggle {
+            position: relative;
+            width: 28px;
+            height: 15px;
+            background: #bbb;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+
+        .dark-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 11px;
+            height: 11px;
+            background: #fff;
+            border-radius: 50%;
+            transition: transform 0.25s;
+        }
+
+        /* Dark mode */
+        body.dark {
+            background: #1c1c1c;
+            color: #ccc;
+        }
+
+        body.dark .logo-text,
+        body.dark .copyright {
+            color: #555;
+        }
+
+        body.dark .main-nav a { color: #777; }
+        body.dark .main-nav a:hover { color: #ccc; }
+        body.dark .social-links a { color: #777; }
+        body.dark .social-links a:hover { color: #ccc; }
+        body.dark .toggle-label { color: #555; }
+        body.dark .dark-toggle { background: #555; }
+        body.dark .dark-toggle::after { transform: translateX(13px); }
+        body.dark .scroll-top { background: #444; }
+        body.dark .logo-group svg path { fill: #444; stroke: #444; }
+        body.dark #contact { background: #282828; }
+        body.dark #contactForm input,
+        body.dark #contactForm textarea { background: #333; border-color: #555; color: #ccc; }
+        body.dark #contactForm button { background: #555; }
+        body.dark #about p { color: #aaa; }
 
         .logo-row {
             margin-bottom: 40px;
@@ -324,6 +390,10 @@
                     <a href="https://www.instagram.com/popsicle__guy/" target="_blank">IG2</a>
                     <a href="https://www.youtube.com/@make_it_nice4" target="_blank">YT</a>
                 </div>
+                <div class="toggle-wrap">
+                    <span class="toggle-label">DARK</span>
+                    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode"></button>
+                </div>
             </div>
         </header>
 
@@ -473,6 +543,16 @@
             // Show about
             aboutSection.classList.add('active');
             aboutSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Dark mode
+        const darkToggle = document.getElementById('darkToggle');
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark');
+        }
+        darkToggle.addEventListener('click', () => {
+            localStorage.setItem('darkMode', document.body.classList.toggle('dark'));
         });
 
         document.getElementById('privateLink').addEventListener('click', (e) => {
